@@ -1,0 +1,8 @@
+{{#checkIf @config.custom.fontBody '!==' "system-ui"}}
+   {{#checkIf @config.custom.fontBody '!==' @config.custom.fontHeadings}}
+      <link rel="preload" href="{{@website.assetsUrl}}/dynamic/fonts/{{@config.custom.fontBody}}/{{@config.custom.fontBody}}.woff2" as="font" type="font/woff2" crossorigin>
+   {{/checkIf}}
+{{/checkIf}}
+{{#checkIf @config.custom.fontHeadings '!==' "system-ui"}}
+   <link rel="preload" href="{{@website.assetsUrl}}/dynamic/fonts/{{@config.custom.fontHeadings}}/{{@config.custom.fontHeadings}}.woff2" as="font" type="font/woff2" crossorigin>
+{{/checkIf}}

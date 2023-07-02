@@ -1,0 +1,46 @@
+{{> head}}
+{{> navbar}}
+<main class="page page--tags">
+   <div class="wrapper">
+      <div class="hero">         
+         <h1>
+            {{ translate 'tags.tagsPageTitle' }}
+            <sup>({{tagsNumber}})</sup>
+         </h1> 
+      </div>
+      <ul class="{{#checkIf @config.custom.layoutTags '==' "grid"}}l-grid {{@config.custom.layoutTagsGrid}} {{else}}l-masonry {{@config.custom.layoutTagsMasonry}}{{/checkIf}}">
+         {{#each tags}}
+            <li class="c-card">
+               {{#if @config.custom.cardsImage}}
+                  {{#featuredImage}}
+                     {{#if url}}
+                        <a href="{{../url}}" class="c-card__image">
+                           <img
+                              src="{{url}}"
+                              {{#if @config.site.responsiveImages}}
+                                 {{responsiveImageAttributes 'tagImage' srcset sizes}}
+                              {{/if}}
+                              {{ lazyload "lazy" }}
+                              height="{{height}}"
+                              width="{{width}}"
+                              alt="{{alt}}">
+                        </a>
+                     {{/if}}
+                  {{/featuredImage}}
+               {{/if}}
+               <div class="c-card__wrapper">
+                  <div class="c-card__header">                     
+                     <h2 class="c-card__title">
+                        <a href="{{url}}" class="invert">
+                           {{name}}
+                        </a> 
+                        <sup>({{postsNumber}})</sup> 
+                     </h2>
+                  </div>                    
+               </div>
+            </li>
+         {{/each}}
+      </ul>
+   </div>
+</main>
+{{> footer}}

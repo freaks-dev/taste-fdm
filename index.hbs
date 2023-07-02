@@ -1,0 +1,109 @@
+{{> head}}
+{{> navbar}}
+{{#checkIf @config.custom.frontSource '==' "post" }}
+   {{> frontpage-post}}
+{{else}}
+   <main>
+      <div class="wrapper">
+         {{#if @config.custom.hero}}
+            {{#checkIf @config.custom.heroSource '==' "static" }}
+               <div class="hero">
+                  {{{@config.custom.textHero}}}
+                  {{#if @config.custom.buttonHeroLinkName}}
+                     <a href="{{@config.custom.buttonHeroLinkUrl}}" class="btn hero__btn">{{@config.custom.buttonHeroLinkName}}</a>
+                  {{/if}}
+               </div>
+            {{else}}
+               {{#featuredPosts}}
+                  <div class="hero">
+                     <div class="hero__date">
+                        {{ translate 'common.published' }}
+                        <time datetime="{{date createdAt 'YYYY-MM-DDTHH:mm'}}">
+                           {{#checkIf @config.custom.formatDate '!=' 'custom'}}
+                              {{date createdAt @config.custom.formatDate}}
+                           {{else}}
+                              {{date createdAt @config.custom.formatDateCustom}}
+                           {{/checkIf}}
+                        </time>
+                     </div>
+                     <h1>{{title}}</h1>
+                     <p>{{{excerpt}}}</p>
+                     <a href="{{url}}" class="btn hero__btn">{{ translate 'common.readmore' }}</a>
+                  </div>
+               {{/featuredPosts}}
+            {{/checkIf}}
+         {{/if}}
+         <div class="{{#checkIf @config.custom.layoutFrontpage '==' "grid"}}l-grid {{@config.custom.layoutFrontpageGrid}} {{else}}l-masonry {{@config.custom.layoutFrontpageMasonry}}{{/checkIf}}">
+            {{#each posts}}
+               <article class="c-card {{@config.custom.cardsLayout}}{{#isFeatured}} c-card--featured{{/isFeatured}}">
+                  {{#if @config.custom.cardsImage}}
+                     {{#featuredImage}}
+                        {{#if url}}
+                           <a href="{{../url}}" class="c-card__image">
+                              <img
+                                 src="{{url}}"
+                                 {{#if @config.site.responsiveImages}}
+                                    {{responsiveImageAttributes 'featuredImage' srcset sizes}}
+                                 {{/if}}
+                                 {{ lazyload "lazy" }}
+                                 height="{{height}}"
+                                 width="{{width}}"
+                                 alt="{{alt}}">
+                           </a>
+                        {{/if}}
+                     {{/featuredImage}}
+                  {{/if}}
+                  <div class="c-card__wrapper">
+                     <header class="c-card__header">
+                        {{#if @config.custom.cardsTag}}
+                           {{#if mainTag}}
+                              <div class="c-card__tag">
+                                 <a href="{{ mainTag.url }}">{{ mainTag.name }}</a>
+                              </div>
+                           {{/if}}
+                        {{/if}}
+                        <h2 class="c-card__title">
+                           <a href="{{url}}" class="invert">
+                              {{title}}
+                           </a>
+                        </h2>
+                     </header>
+                     {{#if @config.custom.cardsExcerpt}}
+                        {{#if hasCustomExcerpt}}
+                           <div class="c-card__text">{{{ excerpt }}}</div>
+                        {{else}}
+                           <p class="c-card__text">{{{ excerpt }}}</p>
+                        {{/if}}
+                     {{/if}}
+                     {{#checkIfAny @config.custom.cardsDate @config.custom.cardsComments}}
+                        <footer class="c-card__meta">
+                           {{#if @config.custom.cardsDate}}
+                              <time datetime="{{date createdAt 'YYYY-MM-DDTHH:mm'}}">
+                                 {{#checkIf @config.custom.formatDate '!=' 'custom'}}
+                                    {{date createdAt @config.custom.formatDate}}
+                                 {{else}}
+                                    {{date createdAt @config.custom.formatDateCustom}}
+                                 {{/checkIf}}
+                              </time>
+                           {{/if}}
+                           {{#if @config.custom.cardsComments}}
+                              <div class="c-card__comments">
+                                 <a href="{{url}}#comments" rel="nofollow" aria-label="{{ translate 'common.comments' }}">
+                                    <svg aria-hidden="true">
+                                       <title>{{ translate 'common.comments' }}</title>
+                                       <use xlink:href="{{@website.assetsUrl}}/svg/svg-map.svg#comments"/>
+                                    </svg>
+                                 </a>
+                              </div>
+                           {{/if}}
+                        </footer>
+                     {{/checkIfAny}}
+                  </div>
+               </article>
+            {{/each}}
+         </div>
+        {{> pagination}}
+      </div>
+   </main>
+{{/checkIf}}
+{{> footer}}

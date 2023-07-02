@@ -1,0 +1,84 @@
+
+{{#if @config.custom.shareFacebook}}
+   <a
+      href="https://www.facebook.com/sharer/sharer.php?u={{encodeUrlFragment url}}"
+      class="js-share facebook"
+      aria-label="{{ translate 'partials.shareButtons.shareWithFacebook' }}"
+      rel="nofollow noopener noreferrer">
+      <svg>
+         <use xlink:href="{{@website.assetsUrl}}/svg/svg-map.svg#facebook"/>
+      </svg>
+   </a> 
+{{/if}}
+
+{{#if @config.custom.shareTwitter}}
+   <a href="https://twitter.com/share?url={{encodeUrlFragment url}}&amp;via={{#if @config.custom.shareTwitterName}}{{encodeUrlFragment @config.custom.shareTwitterName}}{{else}}{{encodeUrlFragment @website.name}}{{/if}}&amp;text={{encodeUrlFragment title}}
+"
+      class="js-share twitter"
+      aria-label="{{ translate 'partials.shareButtons.shareWithTwitter' }}"
+      rel="nofollow noopener noreferrer">
+      <svg>
+         <use xlink:href="{{@website.assetsUrl}}/svg/svg-map.svg#twitter"/>
+      </svg>
+   </a>
+{{/if}}
+
+{{#if @config.custom.sharePinterest}}
+   <a
+      href="https://pinterest.com/pin/create/button/?url={{encodeUrlFragment url}}&amp;media={{encodeUrlFragment featuredImage.url}}&amp;description={{encodeUrlFragment title}}"
+      class="js-share pinterest"
+      aria-label="{{ translate 'partials.shareButtons.shareWithPinterest' }}"
+      rel="nofollow noopener noreferrer">
+      <svg>
+         <use xlink:href="{{@website.assetsUrl}}/svg/svg-map.svg#pinterest"/>
+      </svg>
+   </a>
+{{/if}}
+
+{{#if @config.custom.shareMix}}
+   <a
+      href="https://mix.com/add?url={{encodeUrlFragment url}}"
+      class="js-share mix"
+      aria-label="{{ translate 'partials.shareButtons.shareWithMix' }}"
+      rel="nofollow noopener noreferrer">
+      <svg>
+         <use xlink:href="{{@website.assetsUrl}}/svg/svg-map.svg#mix"/>
+      </svg>
+   </a>
+{{/if}}
+
+{{#if @config.custom.shareLinkedin}}
+   <a
+      href="https://www.linkedin.com/sharing/share-offsite/?url={{encodeUrlFragment url}}"
+      class="js-share linkedin"
+      aria-label="{{ translate 'partials.shareButtons.shareWithLinkedIn' }}"
+      rel="nofollow noopener noreferrer">
+      <svg>
+         <use xlink:href="{{@website.assetsUrl}}/svg/svg-map.svg#linkedin"/>
+      </svg>
+   </a>
+{{/if}}
+
+{{#if @config.custom.shareBuffer}}
+   <a
+      href="https://buffer.com/add?text={{encodeUrlFragment title}}&amp;url={{encodeUrlFragment url}}"
+      class="js-share buffer"
+      aria-label="{{ translate 'partials.shareButtons.shareWithBuffer' }}"
+      rel="nofollow noopener noreferrer">
+      <svg>
+         <use xlink:href="{{@website.assetsUrl}}/svg/svg-map.svg#buffer"/>
+      </svg>
+   </a>
+{{/if}}
+
+{{#if @config.custom.shareWhatsApp}}
+   <a
+      href="https://api.whatsapp.com/send?text={{encodeUrlFragment title}} {{encodeUrlFragment url}}" 
+      class="js-share whatsapp" 
+      aria-label="{{ translate 'partials.shareButtons.shareWithWhatsApp' }}"
+      rel="nofollow noopener noreferrer">
+      <svg class="icon" aria-hidden="true" focusable="false">
+         <use xlink:href="{{@website.assetsUrl}}/svg/svg-map.svg#whatsapp"/>
+      </svg>
+   </a>
+{{/if}}

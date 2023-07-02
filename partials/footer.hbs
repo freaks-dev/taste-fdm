@@ -1,0 +1,120 @@
+<footer class="footer">
+   {{#if @config.custom.socialButtons}}
+      <div class="footer__social">
+         {{#if @config.custom.socialFacebook}}
+            <a href="{{@config.custom.socialFacebook}}" aria-label="Facebook" class="facebook">
+               <svg>
+                  <use xlink:href="{{@website.assetsUrl}}/svg/svg-map.svg#facebook"/>
+               </svg>
+            </a>
+         {{/if}}
+         {{#if @config.custom.socialTwitter}}
+            <a href="{{@config.custom.socialTwitter}}" aria-label="Twitter" class="twitter">
+               <svg>
+                  <use xlink:href="{{@website.assetsUrl}}/svg/svg-map.svg#twitter"/>
+               </svg>
+            </a>
+         {{/if}}
+         {{#if @config.custom.socialInstagram}}
+            <a href="{{@config.custom.socialInstagram}}" aria-label="Instagram" class="instagram">
+               <svg>
+                  <use xlink:href="{{@website.assetsUrl}}/svg/svg-map.svg#instagram"/>
+               </svg>
+            </a>
+         {{/if}}
+         {{#if @config.custom.socialLinkedin}}
+            <a href="{{@config.custom.socialLinkedin}}" aria-label="LinkedIn" class="linkedin">
+               <svg>
+                  <use xlink:href="{{@website.assetsUrl}}/svg/svg-map.svg#linkedin"/>
+               </svg>
+            </a>
+         {{/if}}
+         {{#if @config.custom.socialVimeo}}
+            <a href="{{@config.custom.socialVimeo}}" aria-label="Vimeo" class="vimeo">
+               <svg>
+                  <use xlink:href="{{@website.assetsUrl}}/svg/svg-map.svg#vimeo"/>
+               </svg>
+            </a>
+         {{/if}}
+         {{#if @config.custom.socialPinterest}}
+            <a href="{{@config.custom.socialPinterest}}" aria-label="Pinterest" class="pinterest">
+               <svg>
+                  <use xlink:href="{{@website.assetsUrl}}/svg/svg-map.svg#pinterest"/>
+               </svg>
+            </a>
+         {{/if}}
+         {{#if @config.custom.socialYoutube}}
+            <a href="{{@config.custom.socialYoutube}}" aria-label="Youtube" class="youtube">
+               <svg>
+                  <use xlink:href="{{@website.assetsUrl}}/svg/svg-map.svg#youtube"/>
+               </svg>
+            </a>
+         {{/if}}
+      </div>
+   {{/if}}
+
+   {{> menu-footer menus.footerMenu}}
+
+   {{#if @config.custom.copyrightText}}
+      <div class="footer__copyright">
+        Copyright &copy; {{@utils.currentYear}} {{{@config.custom.copyrightText}}} <br> 
+        {{ translate 'common.updated' }}
+        <time datetime="{{date @website.lastUpdate 'YYYY-MM-DDTHH:mm'}}">
+                        {{#checkIf @config.custom.formatDate '!=' 'custom'}}
+                           {{date @website.lastUpdate @config.custom.formatDate}}
+                        {{else}}
+                           {{date @website.lastUpdate @config.custom.formatDateCustom}}
+                        {{/checkIf}}
+                     </time>
+      </div>
+   {{/if}}
+</footer>
+<script>
+   window.publiiThemeMenuConfig = {    
+      mobileMenuMode: '{{@config.custom.mobilemenu}}',
+      animationSpeed: 300,
+      submenuWidth: {{#checkIf @config.custom.submenu '==' "auto" }}'auto'{{else}}{{@config.custom.submenuWidth}}{{/checkIf}},
+      doubleClickTime: 500,
+      mobileMenuExpandableSubmenus: {{@config.custom.mobilemenuExpandableSubmenus}}, 
+      relatedContainerForOverlayMenuSelector: '.navbar',
+   };
+</script>
+<script defer src="{{js "scripts.min.js"}}"></script>
+{{#if @config.site.mediaLazyLoad}}
+   <script>        
+      var images = document.querySelectorAll('img[loading]');
+
+      for (var i = 0; i < images.length; i++) {
+         if (images[i].complete) {
+               images[i].classList.add('is-loaded');
+         } else {
+               images[i].addEventListener('load', function () {
+                  this.classList.add('is-loaded');
+               }, false);
+         }
+      }
+   </script>
+{{/if}}
+{{#is "post"}}
+   {{#post}}
+      {{#if hasGallery}}
+          {{> photoswipe}}
+      {{/if}}
+  {{/post}}
+{{/is}}
+{{#checkIf @config.custom.frontSource '==' "post"}}
+   {{#checkIf @config.custom.frontGallery '==' true}}
+      {{#is "index"}}
+          {{> photoswipe}}
+      {{/is}}
+   {{/checkIf}}
+{{/checkIf}}
+
+{{#if @renderer.previewMode}}
+   <script defer src="{{js "svg-map.js"}}"></script>
+   <script defer src="{{js "svg-fix.js"}}"></script>
+{{/if}}
+{{{@footerCustomCode}}}
+{{{ publiiFooter }}}
+</body>
+</html>
