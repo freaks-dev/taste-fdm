@@ -39,11 +39,12 @@ For any questions or support regarding this modified Taste theme, please refer t
 
 Include relevant screenshots or provide instructions on how to view the modified theme in action.
 
-![Screenshot 1](path-to-screenshot-1.png)
-_Description of Screenshot 1._
+![Screenshot from 2023-07-02 11-36-09](https://github.com/freaks-dev/taste-fdm/assets/76874370/e6d25399-daf2-41c7-9234-bfb63dbc8834)
 
-![Screenshot 2](path-to-screenshot-2.png)
-_Description of Screenshot 2._
+![Screenshot from 2023-07-02 11-36-28](https://github.com/freaks-dev/taste-fdm/assets/76874370/ea012099-7452-4ebe-8ab1-1d864e4e6ead)
+
+
+![Screenshot from 2023-07-02 12-06-35](https://github.com/freaks-dev/taste-fdm/assets/76874370/33ca4fdd-693a-469d-b4c2-2352f0b32843)
 
 ---
 
