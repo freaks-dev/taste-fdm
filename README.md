@@ -29,11 +29,11 @@ The modified Taste theme is based on the original [Publii Taste theme](https://m
 
 ## Feedback and Contributions
 
-Feedback, bug reports, and contributions are welcome. As this is an independent modification, please submit any issues or pull requests specifically related to this modified version via the [GitHub repository](https://link-to-github-repo.com).
+Feedback, bug reports, and contributions are welcome. As this is an independent modification, please submit any issues or pull requests specifically related to this modified version via the [GitHub repository](https://github.com/freaks-dev/taste-fdm).
 
 ## Support
 
-For any questions or support regarding this modified Taste theme, please refer to the [GitHub repository](https://link-to-github-repo.com) for additional information.
+For any questions or support regarding this modified Taste theme, please refer to the [GitHub repository](https://github.com/freaks-dev/taste-fdm) for additional information.
 
 ## Screenshots
 
