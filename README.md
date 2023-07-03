@@ -16,7 +16,7 @@ This repository contains a modified version of the Publii Taste theme, which has
 
 4. **Included Inter Font:** The modified theme includes the Inter font, which can be used locally for the website without requiring any additional configuration. This addition enhances the visual appeal and typographic choices available to website creators.
 
-5. **Updated Position of Website Updated Date:** The updated date information, previously located in the hero section, has been moved to the footer. This change improves the overall layout and consistency of the theme.
+5. **Updated Position of Website Updated Date:** The updated date information, previously located in the hero section, has been moved to the footer. This change improves the overall layout and consistency of the theme. Additionally, website owners have the option to disable the display of the website's last updated date if desired.
 
 6. **Reduced Footer Height:** The theme now offers a reduced footer height to optimize spacing, ensuring a more aesthetically pleasing and streamlined layout.
 
@@ -24,7 +24,7 @@ This repository contains a modified version of the Publii Taste theme, which has
 
 8. **Added Footer Menu:** Enhancing the theme's functionality, a new footer menu area has been included, providing an additional space for displaying menus and enhancing website navigation.
 
-9. **Website Updated Date Option:** Website owners now have the flexibility to choose whether they want to display the website's last updated date. This customizable option allows for greater control over the presentation of information on the website.
+9. **Styled Forms:** The modified theme also includes styling for forms. To achieve the desired form style, use the custom__form class for forms and form-row class for inputs. Furthermore, a checkbox option named form-agree has been added for forms. This allows website owners to include an agree checkbox for users to agree to terms or conditions before submitting the form.
 
 ## Version
 

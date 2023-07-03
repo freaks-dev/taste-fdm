@@ -2498,3 +2498,25 @@ textarea {
 .footer__nav-item > a:focus {
   color: var(--link-hover-color);
 }
+.custom__form {
+  background: var(--white);
+  border-radius: calc(2 * var(--border-radius));
+  margin: auto;
+  padding: var(--space-xl)
+}
+.custom__form input:not([type=checkbox]),
+.custom__form textarea {
+  width: 100%
+}
+.custom__form .form-row {
+  margin-top: var(--space-xs)
+}
+.custom__form .form-agree {
+  font-weight: var(--font-weight-normal);
+  display: grid;
+  grid-template-columns: auto 1fr;
+  margin-bottom: var(--space-md)
+}
+.custom__form .form-agree>i {
+  font-style: normal
+}
