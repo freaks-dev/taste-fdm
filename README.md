@@ -28,7 +28,7 @@ This repository contains a modified version of the Publii Taste theme, which has
 
 ## Version
 
-Current version is 2.0.1. Major changes and features addition since version 1.
+Current version is 2.0.2. Major changes and features addition since version 1.
 
 ## License
 
