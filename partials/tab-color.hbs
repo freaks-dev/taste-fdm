@@ -1,4 +1,6 @@
+{{#if @config.custom.tabColorOption}}
 <meta name="theme-color" content="{{@config.custom.defaultTabColor}}" media="(prefers-color-scheme: light)" />
 <meta name="theme-color" content="{{@config.custom.darkModeTabColor}}" media="(prefers-color-scheme: dark)" />
 <meta name="msapplication-navbutton-color" content="{{@config.custom.defaultTabColor}}" />
 <meta name="apple-mobile-web-app-status-bar-style" content="{{@config.custom.defaultTabColor}}" />
+{{/if}}

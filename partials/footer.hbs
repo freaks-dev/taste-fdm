@@ -57,15 +57,17 @@
 
    {{#if @config.custom.copyrightText}}
       <div class="footer__copyright">
-        Copyright &copy; {{@utils.currentYear}} {{{@config.custom.copyrightText}}} <br> 
+        Copyright &copy; {{@utils.currentYear}} {{{@config.custom.copyrightText}}} <br>
+        {{#if @config.custom.websiteUpdatedDate}}
         {{ translate 'common.updated' }}
-        <time datetime="{{date @website.lastUpdate 'YYYY-MM-DDTHH:mm'}}">
-                        {{#checkIf @config.custom.formatDate '!=' 'custom'}}
-                           {{date @website.lastUpdate @config.custom.formatDate}}
-                        {{else}}
-                           {{date @website.lastUpdate @config.custom.formatDateCustom}}
-                        {{/checkIf}}
-                     </time>
+         <time datetime="{{date @website.lastUpdate 'YYYY-MM-DDTHH:mm'}}">
+         {{#checkIf @config.custom.formatDate '!=' 'custom'}}
+         {{date @website.lastUpdate @config.custom.formatDate}}
+         {{else}}
+         {{date @website.lastUpdate @config.custom.formatDateCustom}}
+         {{/checkIf}}
+        </time>
+        {{/if}}
       </div>
    {{/if}}
 </footer>
@@ -113,6 +115,9 @@
 {{#if @renderer.previewMode}}
    <script defer src="{{js "svg-map.js"}}"></script>
    <script defer src="{{js "svg-fix.js"}}"></script>
+{{/if}}
+{{#if @config.custom.copyCopyrightText}}
+<script>document.addEventListener("copy",(function(t){t.preventDefault();var e=window.getSelection().toString()+"\n\n {{#if @config.custom.defaultCopyrightText}} Copyright © {{@utils.currentYear}} {{@website.name}} \n {{title}} \n {{@website.pageUrl}} {{/if}} {{{@config.custom.copiedCopyrightText}}}";t.clipboardData.setData("text/plain",e)}))</script>
 {{/if}}
 {{{@footerCustomCode}}}
 {{{ publiiFooter }}}

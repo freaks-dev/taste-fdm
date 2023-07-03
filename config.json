@@ -1,6 +1,6 @@
 {
     "name": "taste-fdm",
-    "version": "1.4",
+    "version": "2.0.1",
     "author": "freaks-dev",
     "basedOn": "Taste theme",
     "basedOnVersion": "2.5.1.0",
@@ -86,9 +86,17 @@
         {
             "name": "separator",
             "type": "separator",
-            "label": "Taste Version",
+            "label": "Taste Modified Version (Unofficial)",
             "group": "Theme Info",
             "note": "This theme is a customized adaptation of Taste theme version 2.5.1.0, originally derived from the publii taste theme. You can find the original taste theme <a href='https://marketplace.getpublii.com/themes/taste/' target='_blank'> here</a>. Please note that this theme is not an official publii theme, but rather a modified version. It is distributed under the GPL 3 license.",
+            "size": "medium"
+        },
+        {
+            "name": "separator",
+            "type": "separator",
+            "label": "GitHub Repo",
+            "group": "Theme Info",
+            "note": "Link to modified theme's <a href='https://github.com/freaks-dev/taste-fdm' target='_blank'> GitHub repo.</a>.",
             "size": "medium"
         },
         {
@@ -733,18 +741,45 @@
             "type": "colorpicker"
         },
         {
+            "name": "separator",
+            "type": "separator",
+            "label": "Tab Color",
+            "group": "Tab Color",
+            "note": "The Tab Colors feature lets you customize the colors of your tabs, allowing you to personalize the appearance of tabbed elements in your theme. Create a unique and cohesive design by easily selecting and applying your preferred colors or color schemes to enhance the visual appeal and user experience of your website or application.",
+            "size": "small"
+        },   
+        {
+            "name": "tabColorOption",
+            "group": "Tab Color",
+            "label": "Enable Tab Colors",
+            "value": false,
+            "type": "checkbox"
+        },
+        {
             "name": "defaultTabColor",
             "label": "Default color",
             "group": "Tab Color",
             "value": "#007bff",
-            "type": "colorpicker"
+            "type": "colorpicker",
+            "dependencies": [
+                {
+                    "field": "tabColorOption",
+                    "value": "true"
+                }
+            ]
         },
         {
             "name": "darkModeTabColor",
             "label": "Dark mode color",
             "group": "Tab Color",
             "value": "#007bff",
-            "type": "colorpicker"
+            "type": "colorpicker",
+            "dependencies": [
+                {
+                    "field": "tabColorOption",
+                    "value": "true"
+                }
+            ]
         },
         {
             "name": "separator",
@@ -1460,6 +1495,62 @@
             "value": "<br>Powered by Publii",
             "type": "textarea",
             "note": "Insert <code><span style='white-space: pre;'>&lt;br&gt;</span></code> to create line breaks"
+        },
+        {
+            "name": "separator",
+            "type": "separator",
+            "label": "",
+            "group": "Footer",
+            "size": "small thin"
+        },
+        {
+            "name": "copyCopyrightText",
+            "group": "Footer",
+            "label": "Copy Copyright Text",
+            "note": "Enabling this will automatically include a copyright notice with any content copied by the user, ensuring proper attribution",
+            "value": false,
+            "type": "checkbox"
+        },
+        {
+            "name": "defaultCopyrightText",
+            "group": "Footer",
+            "label": "Default Copyright Text",
+            "value": "true",
+            "type": "checkbox",
+            "dependencies": [
+                {
+                    "field": "copyCopyrightText",
+                    "value": "true"
+                }
+            ]
+        },
+        {
+            "name": "copiedCopyrightText",
+            "group": "Footer",
+            "label": "Custom Copy Copyright Text (Text)",
+            "type": "textarea",
+            "note": "Write the custom copy copyright text here. This will show after default text. Also, use '&#92;n' for line break here. For multiple line breaks use it consecutively, for example for two line breaks, use '&#92;n&#92;n'.",
+            "dependencies": [
+                {
+                    "field": "copyCopyrightText",
+                    "value": "true"
+                }
+            ]
+        },
+        {
+            "name": "separator",
+            "type": "separator",
+            "label": "",
+            "group": "Footer",
+            "size": "small thin"
+        },
+        {
+            "name": "websiteUpdatedDate",
+            "group": "Footer",
+            "label": "Show Website Last Updated Date",
+            "note": "<b>Requires Copyright Text above to be turned on.</b> Display the last updated date of your website in the footer, below the copyright text, using the date and time format specified in the site settings. Keep your visitors informed about the most recent changes to your website with this convenient feature.",
+            "value": "true",
+            "type": "checkbox"
         },
         {
             "name": "separator",
