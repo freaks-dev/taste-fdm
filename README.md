@@ -50,12 +50,15 @@ For any questions or support regarding this modified Taste theme, please refer t
 
 Include relevant screenshots or provide instructions on how to view the modified theme in action.
 
-![Screenshot from 2023-07-02 11-36-09](https://github.com/freaks-dev/taste-fdm/assets/76874370/e6d25399-daf2-41c7-9234-bfb63dbc8834)
+![Screenshot from 2023-07-03 19-28-03](https://github.com/freaks-dev/taste-fdm/assets/76874370/ba4f240f-98bf-4b22-bbef-d8e550b228f8)
 
-![Screenshot from 2023-07-02 11-36-28](https://github.com/freaks-dev/taste-fdm/assets/76874370/ea012099-7452-4ebe-8ab1-1d864e4e6ead)
-
+![Screenshot from 2023-07-03 12-08-34](https://github.com/freaks-dev/taste-fdm/assets/76874370/6e3982d4-9ade-40c8-a865-7215b0d1ad39)
 
 ![Screenshot from 2023-07-02 12-06-35](https://github.com/freaks-dev/taste-fdm/assets/76874370/33ca4fdd-693a-469d-b4c2-2352f0b32843)
+
+![Screenshot from 2023-07-03 12-08-15](https://github.com/freaks-dev/taste-fdm/assets/76874370/2875e68e-948f-4239-a335-f24cbe339f65)
+
+![Screenshot from 2023-07-03 19-16-07](https://github.com/freaks-dev/taste-fdm/assets/76874370/6b315194-352e-4446-a7b6-e95ed4a303ee)
 
 ---
 
