@@ -3,242 +3,330 @@
  */
 
 var generateThemeVariables = function(params) {
-   let fontParams = {
-       'system-ui': {
-          name: 'SystemUI',
-          family: '-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"'
-       },
-       andadapro: {
-         name: 'Andada Pro',
-         family: '\'Andada Pro\', serif',
-         weight: '400 840'
-       },
-       antonio: {
-        name: 'Antonio',
-        family: '\'Antonio\', sans-serif',
-        weight: '100 700'
-      },
-       archivonarrow: {
-         name: 'Archivo Narrow',
-         family: '\'Archivo Narrow\', sans-serif',
-         weight: '400 700'
-       },
-       asap: {
-        name: 'Asap',
-        family: '\'Asap\', sans-serif',
-        weight: '400 700'
-      },
-       besley: {
-         name: 'Besley',
-         family: '\'Besley\', serif',
-         weight: '400 900'
-       },
-       bigshouldersdisplay: {
-        name: 'Big Shoulders Display',
-        family: '\'Big Shoulders Display\', cursive',
-        weight: '100 900'
-      },
-       bitter: {
-         name: 'Bitter',
-         family: '\'Bitter\', serif',
-         weight: '100 900'
-       },
-       brygada1918: {
-         name: 'Brygada 1918',
-         family: '\'Brygada 1918\', serif',
-         weight: '400 700'
-       },
-       cairo: {
-         name: 'Cairo',
-         family: '\'Cairo\', sans-serif',
-         weight: '200 1000'
-       },
-       comfortaa: {
-        name: 'Comfortaa',
-        family: '\'Comfortaa\', cursive',
-        weight: '300 700'
-       },
-       dancingscript: {
-        name: 'Dancing Script',
-        family: '\'Dancing Script\', cursive',
-        weight: '400 700'
-       },
-       domine: {
-         name: 'Domine',
-         family: '\'Domine\', serif',
-         weight: '400 700'
-       },
-       dosis: {
-         name: 'Dosis',
-         family: '\'Dosis\', sans-serif',
-         weight: '200 800'
-       },
-       exo: {
-        name: 'Exo',
-        family: '\'Exo\', sans-serif',
-        weight: '100 900'
-       },
-       faustina: {
-         name: 'Faustina',
-         family: '\'Faustina\', serif',
-         weight: '300 800'
-       },
-       glory: {
-        name: 'Glory',
-        family: '\'Glory\', sans-serif',
-        weight: '100 800'
-       },
-       gluten: {
-        name: 'Gluten',
-        family: '\'Gluten\', cursive',
-        weight: '100 900'
-       },
-       heebo: {
-        name: 'Heebo',
-        family: '\'Heebo\', sans-serif',
-        weight: '100 900'
-       },
-       inter: {
-        name: 'Inter',
-        family: '\'Inter\', sans-serif',
-        weight: '100 900'
-       },
-       jetbrainsmono: {
-        name: 'JetBrains Mono',
-        family: '\'JetBrains Mono\', monospace',
-        weight: '100 800'
-       },
-       jura: {
-        name: 'Jura',
-        family: '\'Jura\', sans-serif',
-        weight: '300 700'
-       },
-       karla: {
-         name: 'Karla',
-         family: '\'Karla\', sans-serif',
-         weight: '200 800'
-       },
-       kreon: {
-        name: 'Kreon',
-        family: '\'Kreon\', serif',
-        weight: '300 700'
-       },
-       lemonada: {
-        name: 'Lemonada',
-        family: '\'Lemonada\', cursive',
-        weight: '300 700'
-      },
-       librefranklin: {
-        name: 'Libre Franklin',
-        family: '\'Libre Franklin\', sans-serif',
-        weight: '100 900'
-      },
-       lora: {
-         name: 'Lora',
-         family: '\'Lora\', serif',
-         weight: '400 700'
-       },
-       manuale: {
-         name: 'Manuale',
-         family: '\'Manuale\', serif',
-         weight: '300 800'
-       },
-       manrope: {
-         name: 'Manrope',
-         family: '\'Manrope\', sans-serif',
-         weight: '100 900'
-       },
-       merriweathersans: {
-         name: 'Merriweather Sans',
-         family: '\'Merriweather Sans\', sans-serif',
-         weight: '300 800'
-       },
-       montserrat: {
-         name: 'Montserrat',
-         family: '\'Montserrat\', sans-serif',
-         weight: '100 900'
-       },      
-       nunito: {
-         name: 'Nunito',
-         family: '\'Nunito\', sans-serif',
-         weight: '200 1000'
-       },
-       oswald: {
-        name: 'Oswald',
-        family: '\'Oswald\', sans-serif',
-        weight: '200 700'
-      },
-       petrona: {
-         name: 'Petrona',
-         family: '\'Petrona\', serif',
-         weight: '100 900'
-       },
-       playfairdisplay: {
-         name: 'Playfair Display',
-         family: '\'Playfair Display\', serif',
-         weight: '400 900'
-       },
-       publicsans: {
-        name: 'Public Sans',
-        family: '\'Public Sans\', sans-serif',
-        weight: '100 900'
-       },
-       quicksand: {
-        name: 'Quicksand',
-        family: '\'Quicksand\', sans-serif',
-        weight: '300 700'
-       },
-       raleway: {
-         name: 'Raleway',
-         family: '\'Raleway\', sans-serif',
-         weight: '100 900'
-       },
-       redhatmono: {
-        name: 'Red Hat Mono',
-        family: '\'Red Hat Mono\', monospace',
-        weight: '300 700'
-       },
-       robotoslab: {
-         name: 'Roboto Slab',
-         family: '\'Roboto Slab\', serif',
-         weight: '100 900'
-       },
-       rubik: {
-         name: 'Rubik',
-         family: '\'Rubik\', sans-serif',
-         weight: '300 900'
-       },
-       ruda: {
-        name: 'Ruda',
-        family: '\'Ruda\', sans-serif',
-        weight: '400 900'
-       },
-       smoochsans: {
-        name: 'Smooch Sans',
-        family: '\'Smooch Sans\', sans-serif',
-        weight: '100 900'
-       },
-       sourcecodepro: {
-        name: 'Source Code Pro',
-        family: '\'Source Code Pro\', monospace',
-        weight: '200 900'
-       },
-       spartan: {
-        name: 'Spartan',
-        family: '\'Spartan\', sans-serif',
-        weight: '100 900'
-       },
-       urbanist: {
-        name: 'Urbanist',
-        family: '\'Urbanist\', sans-serif',
-        weight: '100 900'
-       },
-       yanonekaffeesatz: {
-         name: 'Yanone Kaffeesatz',
-         family: '\'Yanone Kaffeesatz\', sans-serif',
-         weight: '200 700'
-       }
-   };
+  let fontParams = {
+    'system-ui': {
+      name: 'SystemUI',
+      family: '-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"'
+    },
+    aleo: {
+      name: 'Aleo',
+      family: '\'Aleo\', serif',
+      weight: '100 900'
+    },
+    andadapro: {
+      name: 'Andada Pro',
+      family: '\'Andada Pro\', serif',
+      weight: '400 840'
+    },
+    besley: {
+      name: 'Besley',
+      family: '\'Besley\', serif',
+      weight: '400 900'
+    },
+    bitter: {
+      name: 'Bitter',
+      family: '\'Bitter\', serif',
+      weight: '100 900'
+    },
+    brygada1918: {
+      name: 'Brygada 1918',
+      family: '\'Brygada 1918\', serif',
+      weight: '400 700'
+    },
+    domine: {
+      name: 'Domine',
+      family: '\'Domine\', serif',
+      weight: '400 700'
+    },
+    faustina: {
+      name: 'Faustina',
+      family: '\'Faustina\', serif',
+      weight: '300 800'
+    },
+    frankruhllibre: {
+      name: 'Frank Ruhl Libre',
+      family: '\'Frank Ruhl Libre\', serif',
+      weight: '300 900'
+    },
+    imbue: {
+      name: 'Imbue',
+      family: '\'Imbue\', serif',
+      weight: '100 900'
+    },
+    kreon: {
+      name: 'Kreon',
+      family: '\'Kreon\', serif',
+      weight: '300 700'
+    },
+    labrada: {
+      name: 'Labrada',
+      family: '\'Labrada\', serif',
+      weight: '100 900'
+    },
+    lora: {
+      name: 'Lora',
+      family: '\'Lora\', serif',
+      weight: '400 700'
+    },
+    manuale: {
+      name: 'Manuale',
+      family: '\'Manuale\', serif',
+      weight: '300 800'
+    },
+    petrona: {
+      name: 'Petrona',
+      family: '\'Petrona\', serif',
+      weight: '100 900'
+    },
+    playfairdisplay: {
+      name: 'Playfair Display',
+      family: '\'Playfair Display\', serif',
+      weight: '400 900'
+    },
+    robotoslab: {
+      name: 'Roboto Slab',
+      family: '\'Roboto Slab\', serif',
+      weight: '100 900'
+    },
+    rokkitt: {
+      name: 'Rokkitt',
+      family: '\'Rokkitt\', serif',
+      weight: '100 900'
+    },
+    yrsa: {
+      name: 'Yrsa',
+      family: '\'Yrsa\', serif',
+      weight: '300 700'
+    },
+
+    adventpro: {
+      name: 'Advent Pro',
+      family: '\'Advent Pro\', sans-serif',
+      weight: '100 900'
+    },
+    antonio: {
+      name: 'Antonio',
+      family: '\'Antonio\', sans-serif',
+      weight: '100 700'
+    },
+    archivonarrow: {
+      name: 'Archivo Narrow',
+      family: '\'Archivo Narrow\', sans-serif',
+      weight: '400 700'
+    },
+    asap: {
+      name: 'Asap',
+      family: '\'Asap\', sans-serif',
+      weight: '400 700'
+    },
+    assistant: {
+      name: 'Assistant',
+      family: '\'Assistant\', sans-serif',
+      weight: '200 800'
+    },
+    cabin: {
+      name: 'Cabin',
+      family: '\'Cabin\', sans-serif',
+      weight: '400 700'
+    },
+    cairo: {
+      name: 'Cairo',
+      family: '\'Cairo\', sans-serif',
+      weight: '200 1000'
+    },
+    dosis: {
+      name: 'Dosis',
+      family: '\'Dosis\', sans-serif',
+      weight: '200 800'
+    },
+    exo: {
+      name: 'Exo',
+      family: '\'Exo\', sans-serif',
+      weight: '100 900'
+    },
+    figtree: {
+      name: 'Figtree',
+      family: '\'Figtree\', sans-serif',
+      weight: '300 900'
+    },
+    glory: {
+      name: 'Glory',
+      family: '\'Glory\', sans-serif',
+      weight: '100 800'
+    },
+    heebo: {
+      name: 'Heebo',
+      family: '\'Heebo\', sans-serif',
+      weight: '100 900'
+    },
+    instrumentsans: {
+      name: 'Instrument Sans',
+      family: '\'Instrument Sans\', serif',
+      weight: '400 700'
+    },
+    jura: {
+      name: 'Jura',
+      family: '\'Jura\', sans-serif',
+      weight: '300 700'
+    },
+    karla: {
+      name: 'Karla',
+      family: '\'Karla\', sans-serif',
+      weight: '200 800'
+    },
+    lexend: {
+      name: 'Lexend',
+      family: '\'Lexend\', sans-serif',
+      weight: '100 900'
+    },
+    librefranklin: {
+      name: 'Libre Franklin',
+      family: '\'Libre Franklin\', sans-serif',
+      weight: '100 900'
+    },
+    manrope: {
+      name: 'Manrope',
+      family: '\'Manrope\', sans-serif',
+      weight: '100 900'
+    },
+    mavenpro: {
+      name: 'Maven Pro',
+      family: '\'Maven Pro\', sans-serif',
+      weight: '400 900'
+    },
+    merriweathersans: {
+      name: 'Merriweather Sans',
+      family: '\'Merriweather Sans\', sans-serif',
+      weight: '300 800'
+    },
+    montserrat: {
+      name: 'Montserrat',
+      family: '\'Montserrat\', sans-serif',
+      weight: '100 900'
+    },
+    nunito: {
+      name: 'Nunito',
+      family: '\'Nunito\', sans-serif',
+      weight: '200 1000'
+    },
+    orbitron: {
+      name: 'Orbitron',
+      family: '\'Orbitron\', sans-serif',
+      weight: '400 900'
+    },
+    oswald: {
+      name: 'Oswald',
+      family: '\'Oswald\', sans-serif',
+      weight: '200 700'
+    },
+    plusjakartasans: {
+      name: 'Plus Jakarta Sans',
+      family: '\'Plus Jakarta Sans\', sans-serif',
+      weight: '200 800'
+    },
+    publicsans: {
+      name: 'Public Sans',
+      family: '\'Public Sans\', sans-serif',
+      weight: '100 900'
+    },
+    quicksand: {
+      name: 'Quicksand',
+      family: '\'Quicksand\', sans-serif',
+      weight: '300 700'
+    },
+    raleway: {
+      name: 'Raleway',
+      family: '\'Raleway\', sans-serif',
+      weight: '100 900'
+    },
+    redhatdisplay: {
+      name: 'Red Hat Display',
+      family: '\'Red Hat Display\', sans-serif',
+      weight: '300 900'
+    },
+    robotoflex: {
+      name: 'Roboto Flex',
+      family: '\'Roboto Flex\', sans-serif',
+      weight: '100 900'
+    },
+    rubik: {
+      name: 'Rubik',
+      family: '\'Rubik\', sans-serif',
+      weight: '300 900'
+    },
+    ruda: {
+      name: 'Ruda',
+      family: '\'Ruda\', sans-serif',
+      weight: '400 900'
+    },
+    smoochsans: {
+      name: 'Smooch Sans',
+      family: '\'Smooch Sans\', sans-serif',
+      weight: '100 900'
+    },
+    spartan: {
+      name: 'Spartan',
+      family: '\'Spartan\', sans-serif',
+      weight: '100 900'
+    },
+    urbanist: {
+      name: 'Urbanist',
+      family: '\'Urbanist\', sans-serif',
+      weight: '100 900'
+    },
+    worksans: {
+      name: 'Work Sans',
+      family: '\'Work Sans\', sans-serif',
+      weight: '100 900'
+    },
+    yanonekaffeesatz: {
+      name: 'Yanone Kaffeesatz',
+      family: '\'Yanone Kaffeesatz\', sans-serif',
+      weight: '200 700'
+    },
+    
+    bigshouldersdisplay: {
+      name: 'Big Shoulders Display',
+      family: '\'Big Shoulders Display\', cursive',
+      weight: '100 900'
+    },
+    comfortaa: {
+      name: 'Comfortaa',
+      family: '\'Comfortaa\', cursive',
+      weight: '300 700'
+    },
+    dancingscript: {
+      name: 'Dancing Script',
+      family: '\'Dancing Script\', cursive',
+      weight: '400 700'
+    },
+    gluten: {
+      name: 'Gluten',
+      family: '\'Gluten\', cursive',
+      weight: '100 900'
+    },
+    lemonada: {
+      name: 'Lemonada',
+      family: '\'Lemonada\', cursive',
+      weight: '300 700'
+    },
+
+    jetbrainsmono: {
+      name: 'JetBrains Mono',
+      family: '\'JetBrains Mono\', monospace',
+      weight: '100 800'
+    },
+    redhatmono: {
+      name: 'Red Hat Mono',
+      family: '\'Red Hat Mono\', monospace',
+      weight: '300 700'
+    },
+    sourcecodepro: {
+      name: 'Source Code Pro',
+      family: '\'Source Code Pro\', monospace',
+      weight: '200 900'
+    }
+  };
 
    let fontBodyName = fontParams[params.fontBody]?.name;
    let fontBodyFamily = fontParams[params.fontBody]?.family;

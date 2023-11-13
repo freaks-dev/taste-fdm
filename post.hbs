@@ -75,6 +75,9 @@
                   </figure>
                {{/if}}
             {{/featuredImage}}
+            {{#if @config.post.displayCitation}}
+            {{> cite}}
+            {{/if}}
             <div class="post__inner">
                <div class="post__entry">
                   {{{text}}}
@@ -110,9 +113,15 @@
                            {{/if}}
 
                            {{#if @config.post.displayShareButtons}}
-                              <aside class="post__share">
-                                 {{> share-buttons}}
-                              </aside>
+                              {{#checkIfAll @plugins.socialSharing @plugins.socialSharing.state}}
+                                 <aside class="post__share">
+                                    {{{@customSocialSharing}}}
+                                 </aside>
+                              {{else}}
+                                 <aside class="post__share">
+                                    {{> share-buttons}}
+                                 </aside>
+                              {{/checkIfAll}}          
                            {{/if}}
                         </div>
                      {{/checkIfAny}}

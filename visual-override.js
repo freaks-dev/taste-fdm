@@ -5,24 +5,13 @@
 var generateOverride = function (params) {
     let output = ''; 
 
-       if(params.minFontSize !== '1' || params.maxFontSize !== '1.2') {
-              output += `
+       if (params.minFontSize !== '1' || params.maxFontSize !== '1.2') {
+              output += `  
               html {
-                     font-size: ${params.minFontSize}rem;
-              }
-
-              @media screen and (min-width: 20rem) {
-              html {
-                     font-size: calc(${params.minFontSize}rem + (${params.maxFontSize} - ${params.minFontSize}) * ((100vw - 20rem) / 86));
-              }
-              }
-
-              @media screen and (min-width: 106rem) {
-              html {
-                     font-size: ${params.maxFontSize}rem;
-              }
+                  font-size: ${params.minFontSize}rem;
+                  font-size: clamp(${params.minFontSize}rem, ${params.minFontSize}rem + (${params.maxFontSize} - ${params.minFontSize}) * ((100vw - 20rem) / 86), ${params.maxFontSize}rem);
               }`;
-       }
+      }
               
        if (params.submenu === 'custom') {
               output += `
