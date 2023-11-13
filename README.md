@@ -25,10 +25,11 @@ This repository contains a modified version of the Publii Taste theme, which has
 8. **Added Footer Menu:** Enhancing the theme's functionality, a new footer menu area has been included, providing an additional space for displaying menus and enhancing website navigation.
 
 9. **Styled Forms:** The modified theme also includes styling for forms. To achieve the desired form style, use the custom__form class for forms and form-row class for inputs. Furthermore, a checkbox option named form-agree has been added for forms. This allows website owners to include an agree checkbox for users to agree to terms or conditions before submitting the form.
+10. **Citation:** Added a citation option to add citation information in APA, MLA, Chicago and Bluebook format on post.
 
 ## Version
 
-Current version is 2.0.2. Major changes and features addition since version 1.
+Current version is 3.3.1. Major changes and features addition since version 1.
 
 ## License
 
@@ -50,6 +51,12 @@ For any questions or support regarding this modified Taste theme, please refer t
 
 Include relevant screenshots or provide instructions on how to view the modified theme in action.
 
+![Screenshot 2023-11-13 at 13-23-05 New Post](https://github.com/freaks-dev/taste-fdm/assets/76874370/dd54e8b4-cf9f-4960-b546-a249fdf46aae)
+
+![image](https://github.com/freaks-dev/taste-fdm/assets/76874370/a726a901-2f7a-43c9-9492-c667aa9d2f78)
+
+![image](https://github.com/freaks-dev/taste-fdm/assets/76874370/11b6f28c-b858-4ee4-9e1b-65dff9c1e2b6)
+
 ![Screenshot from 2023-07-03 19-28-03](https://github.com/freaks-dev/taste-fdm/assets/76874370/ba4f240f-98bf-4b22-bbef-d8e550b228f8)
 
 ![Screenshot from 2023-07-03 12-08-34](https://github.com/freaks-dev/taste-fdm/assets/76874370/6e3982d4-9ade-40c8-a865-7215b0d1ad39)
@@ -62,4 +69,4 @@ Include relevant screenshots or provide instructions on how to view the modified
 
 ---
 
-Enjoy using the modified Taste theme! We hope it enhances your website's aesthetics and functionality. Please note that this is an unofficial modification and not affiliated with Publii.
+Enjoy using the modified Taste theme! Hope it enhances your website's aesthetics and functionality. **Please note that this is an unofficial modification and not affiliated with Publii.**
