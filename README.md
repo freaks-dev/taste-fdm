@@ -25,7 +25,10 @@ This repository contains a modified version of the Publii Taste theme, which has
 8. **Added Footer Menu:** Enhancing the theme's functionality, a new footer menu area has been included, providing an additional space for displaying menus and enhancing website navigation.
 
 9. **Styled Forms:** The modified theme also includes styling for forms. To achieve the desired form style, use the custom__form class for forms and form-row class for inputs. Furthermore, a checkbox option named form-agree has been added for forms. This allows website owners to include an agree checkbox for users to agree to terms or conditions before submitting the form.
+
 10. **Citation:** Added a citation option to add citation information in APA, MLA, Chicago and Bluebook format on post.
+
+11. **PDF Download Option:** Added a PDF download button on Posts. THis lets the site visitor download your content in pdf. The PDF is highly customizable by the site owner, with multiple font options, like size, weight and style. With an option to include images that link back to the website.
 
 ## Version
 
@@ -34,6 +37,9 @@ Current version is 3.3.1. Major changes and features addition since version 1.
 ## License
 
 This modified Publii Taste theme is released under the GNU General Public License version 3.0 (GPL-3.0). You are free to use, modify, and distribute this theme in accordance with the terms of the GPL-3.0 license.
+
+### License Update
+This project was previously licensed under GPL-3.0 and has been updated to the Boost Software License 1.0 as of 10 November 2024.
 
 ## Credits
 
