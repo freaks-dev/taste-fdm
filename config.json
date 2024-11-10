@@ -1,9 +1,9 @@
 {
-    "name": "Taste-fdm",
-    "version": "3.3.1",
-    "author": "freaks-dev <mail@studyfreaks.org>",
-    "basedOn": "Taste theme",
-    "basedOnVersion": "2.6.0.0",
+    "name": "Taste",
+    "version": "3.5.4",
+    "author": "freaks-dev",
+    "basedOn": "Publii Taste theme",
+    "basedOnVersion": "3.0.0.0",
     "source": "https://marketplace.getpublii.com/themes/taste/",
     "officialTheme": false,
     "modifiedVersion": true,
@@ -29,11 +29,13 @@
         "createTagPages": true,
         "createAuthorPages": true,
         "createTagsList": true,
-        "createSearchPage": false,
+        "createSearchPage": true,
         "create404page": true,
         "customHTML": {
             "beforePost": "Before every post",
-            "afterPost": "After every post"
+            "afterPost": "After every post",
+            "beforePage": "Before every page",
+            "afterPage": "After every page"
         }
     },
     "supportedFeatures": {
@@ -48,7 +50,11 @@
         "customSearch": true,
         "customSharing": true,
         "customComments": true,
-        "embedConsents": true
+        "embedConsents": true,
+        "pages": true
+    },
+    "pageTemplates": {
+        "empty": "Empty container"
     },
     "config": [
         {
@@ -89,7 +95,7 @@
             "type": "separator",
             "label": "Taste Modified Version (Unofficial)",
             "group": "Theme Info",
-            "note": "This theme is a customized adaptation of Taste theme version 2.6.0.0, originally derived from the publii taste theme. You can find the original taste theme <a href='https://marketplace.getpublii.com/themes/taste/' target='_blank'> here</a>. Please note that this theme is not an official publii theme, but rather a modified version. It is distributed under the GPL 3 license.",
+            "note": "This theme is a customized adaptation of Taste theme version 3.0.0.0, originally derived from the publii taste theme. You can find the original taste theme <a href='https://marketplace.getpublii.com/themes/taste/' target='_blank'> here</a>. Please note that this theme is not an official publii theme, but rather a modified version. It is distributed under the GPL 3 license.",
             "size": "medium"
         },
         {
@@ -100,6 +106,7 @@
             "note": "Link to modified theme's <a href='https://github.com/freaks-dev/taste-fdm' target='_blank'> GitHub repo.</a>.",
             "size": "medium"
         },
+
         {
             "name": "pageWidth",
             "label": "Page width",
@@ -116,7 +123,7 @@
         },
         {
             "name": "entryWidth",
-            "label": "Post entry width",
+            "label": "Entry width",
             "group": "Layout",
             "value": "62ch",
             "type": "text"
@@ -124,13 +131,14 @@
         {
             "name": "separator",
             "type": "separator",
-            "label": "Front page",
+            "label": "Homepage",
             "group": "Layout",
-            "size": "big"
+            "note": "<span style=\"color: red\">This option will be removed in the next theme update. You can now set your homepage natively within the Site Settings!</span>",
+            "size": "small"
         },
         {
             "name": "frontSource",
-            "label": "Front page displays",
+            "label": "Homepage displays",
             "group": "Layout",
             "value": "default",
             "type": "radio",
@@ -149,7 +157,7 @@
             "name": "frontPost",
             "label": "Select post",
             "group": "Layout",
-            "note": "This option allows you to display the selected post on the front page. We strongly recommended 'hide' and 'noindex' the selected post to avoid the duplicate content issue.",
+            "note": "This option allows you to display the selected post on the homepage. We strongly recommended 'hide' and 'noindex' the selected post to avoid the duplicate content issue.",
             "value": "",
             "type": "posts-dropdown",
             "dependencies": [
@@ -302,7 +310,7 @@
         },
         {
             "name": "layoutFrontpage",
-            "label": "Frontpage layout",
+            "label": "Homepage layout",
             "group": "Layout",
             "value": "grid",
             "type": "select",
@@ -571,7 +579,7 @@
             "type": "separator",
             "label": "",
             "group": "Post list",
-            "note": "The Post list section offers a range of options for managing the post list, which is displayed in a visually appealing card layout on the front page, tag, and author pages. In this area, you can easily enable or disable elements such as image, main tag, or other elements.",
+            "note": "The Post list section offers a range of options for managing the post list, which is displayed in a visually appealing card layout on the homepage, tag, and author pages. In this area, you can easily enable or disable elements such as image, main tag, or other elements.",
             "size": "small"
         },
         {
@@ -644,7 +652,7 @@
             "name": "navbarHeight",
             "group": "Navbar",
             "label": "Navbar height",
-            "value": "4rem",
+            "value": "6rem",
             "type": "text"
         },
         {
@@ -953,7 +961,7 @@
                     "value": "heebo",
                     "group": "Sans Serif"
                 },
-                 {
+                {
                     "label": "Instrument Sans",
                     "value": "instrumentsans",
                     "group": "Sans Serif"
@@ -1125,6 +1133,20 @@
                 }
             ]
         },  
+        {
+            "name": "disableFontBodyItalic",
+            "label": "Disable italic style",
+            "group": "Fonts",
+            "note": "This option allows you to disable the loading of the dedicated italic version for the body font. The italic font is automatically loaded when selecting a body font that supports it, like Lora, for optimal appearance. However, for performance reasons, you can choose to prevent loading the dedicated italic version by enabling this option.",            
+            "type": "checkbox",
+            "value": false,
+            "dependencies": [
+                {
+                    "field": "fontBody",
+                    "value": "adventpro,aleo,andadapro,archivonarrow,asap,besley,bitter,brygada1918,cabin,exo,faustina,figtree,glory,instrumentsans,jetbrainsmono,karla,labrada,librefranklin,lora,manuale,merriweathersans,montserrat,nunito,petrona,playfairdisplay,plusjakartasans,publicsans,raleway,redhatdisplay,redhatmono,rokkitt,rubik,sourcecodepro,urbanist,worksans,yrsa"
+                }
+            ]
+        },
         {
             "name": "fontHeadings",
             "label": "Headings font (H1-H6)",
@@ -1460,6 +1482,20 @@
             ]
         }, 
         {
+            "name": "disableFontHeadingsItalic",
+            "label": "Disable italic style",
+            "group": "Fonts",
+            "note": "This option allows you to disable loading of the dedicated italic version for the headings font. The italic font is automatically loaded when selecting a headings font that supports it, like Lora, for optimal appearance. However, for performance reasons, you can choose to prevent loading of the dedicated italic version by enabling this option.",            
+            "type": "checkbox",
+            "value": false,
+            "dependencies": [
+                {
+                    "field": "fontHeadings",
+                    "value": "adventpro,aleo,andadapro,archivonarrow,asap,besley,bitter,brygada1918,cabin,exo,faustina,figtree,glory,instrumentsans,jetbrainsmono,karla,labrada,librefranklin,lora,manuale,merriweathersans,montserrat,nunito,petrona,playfairdisplay,plusjakartasans,publicsans,raleway,redhatdisplay,redhatmono,rokkitt,rubik,sourcecodepro,urbanist,worksans,yrsa"
+                }
+            ]
+        },
+        {
             "name": "fontMenu",
             "label": "Menu font",
             "group": "Fonts",
@@ -1540,7 +1576,18 @@
             "type": "range",
             "min": 1,
             "max": 3,
-            "step": 0.1
+            "step": 0.05
+        },
+        {
+            "name": "letterSpacing",
+            "label": "Letter spacing",
+            "group": "Fonts",
+            "note": "Adjusts the spacing between characters for body text elements, excluding headings, in EM.",
+            "value": "0",
+            "type": "range",
+            "min": -1,
+            "max": 1,
+            "step": 0.01
         },
         {
             "name": "separator",
@@ -1586,6 +1633,49 @@
             "min": 100,
             "max": 900,
             "step": 1
+        },
+        {
+            "name": "fontHeadingsStyle",
+            "label": "H1-H6 font style",
+            "group": "Fonts",
+            "value": "normal",
+            "type": "select",
+            "options": [
+                {
+                    "label": "Normal",
+                    "value": "normal"
+                },
+                {
+                    "label": "Italic",
+                    "value": "italic"
+                },
+                {
+                    "label": "Oblique",
+                    "value": "oblique"
+                }
+            ]
+        },
+        {
+            "name": "fontHeadingsLineHeight",
+            "label": "H1-H6 line height",
+            "group": "Fonts",
+            "note": "The default line-height for heading elements (h1, h2, h3, etc.).",
+            "value": "1.2",
+            "type": "range",
+            "min": 1,
+            "max": 3,
+            "step": 0.05
+        },
+        {
+            "name": "fontHeadingsletterSpacing",
+            "label": "H1-H6 letter spacing",
+            "group": "Fonts",
+            "note": "Adjusts the spacing between characters for heading elements (h1, h2, h3, etc.) in EM.",
+            "value": "0",
+            "type": "range",
+            "min": -1,
+            "max": 1,
+            "step": 0.01
         },
         {
             "name": "fontHeadingsTransform",
@@ -1680,50 +1770,8 @@
             "name": "copyrightText",
             "label": "Copyright text",
             "group": "Footer",
-            "value": "<br>Powered by Publii",
-            "type": "textarea",
-            "note": "Insert <code><span style='white-space: pre;'>&lt;br&gt;</span></code> to create line breaks"
-        },
-        {
-            "name": "separator",
-            "type": "separator",
-            "label": "",
-            "group": "Footer",
-            "size": "small thin"
-        },  
-        {
-            "name": "copyCopyrightText",
-            "group": "Footer",
-            "label": "Copy Copyright Text",
-            "note": "Enabling this will automatically include a copyright notice with any content copied by the user, ensuring proper attribution",
-            "value": false,
-            "type": "checkbox"
-        },
-        {
-            "name": "defaultCopyrightText",
-            "group": "Footer",
-            "label": "Default Copyright Text",
-            "value": "true",
-            "type": "checkbox",
-            "dependencies": [
-                {
-                    "field": "copyCopyrightText",
-                    "value": "true"
-                }
-            ]
-        },
-        {
-            "name": "copiedCopyrightText",
-            "group": "Footer",
-            "label": "Custom Copy Copyright Text (Text)",
-            "type": "textarea",
-            "note": "Write the custom copy copyright text here. This will show after default text. Also, use '&#92;n' for line break here. For multiple line breaks use it consecutively, for example for two line breaks, use '&#92;n&#92;n'.",
-            "dependencies": [
-                {
-                    "field": "copyCopyrightText",
-                    "value": "true"
-                }
-            ]
+            "value": "Powered by Publii",
+            "type": "textarea"
         },
         {
             "name": "separator",
@@ -1736,7 +1784,7 @@
             "name": "websiteUpdatedDate",
             "group": "Footer",
             "label": "Show Website Last Updated Date",
-            "note": "<b>Requires Copyright Text above to be turned on.</b> Display the last updated date of your website in the footer, below the copyright text, using the date and time format specified in the site settings. Keep your visitors informed about the most recent changes to your website with this convenient feature.",
+            "note": "Display the last updated date of your website in the footer, below the copyright text, using the date and time format specified in the site settings. Keep your visitors informed about the most recent changes to your website with this convenient feature.",
             "value": "true",
             "type": "checkbox"
         },
@@ -1746,7 +1794,7 @@
             "label": "",
             "group": "Footer",
             "size": "small thin"
-        },
+        },  
         {
             "name": "socialButtons",
             "group": "Footer",
@@ -1848,104 +1896,6 @@
             "dependencies": [
                 {
                     "field": "socialButtons",
-                    "value": "true"
-                }
-            ]
-        },
-        {
-            "name": "separator",
-            "type": "separator",
-            "label": "Citation",
-            "group": "Citation",
-            "note": "This introduces citation feature within each post, enabling users to effortlessly generate and copy citations in various formats such as APA, MLA, Chicago, and Bluebook. Simply clicking on the citation field reveals a dropdown menu with format options.",
-            "size": "medium"
-        },
-        {
-            "name": "citation",
-            "label": "Enable Citation",
-            "group": "Citation",
-            "value": "true",
-            "type": "checkbox",
-            "note": "Requires 'Display Citation' in Post Options."
-        },
-        {
-            "name": "citeApa",
-            "label": "APA",
-            "group": "Citation",
-            "value": "true",
-            "type": "checkbox",
-            "dependencies": [
-                {
-                    "field": "citation",
-                    "value": "true"
-                }
-            ]
-        },
-        {
-            "name": "citeMla",
-            "label": "MLA",
-            "group": "Citation",
-            "value": "true",
-            "type": "checkbox",
-            "dependencies": [
-                {
-                    "field": "citation",
-                    "value": "true"
-                }
-            ]
-        },
-        {
-            "name": "citeChicago",
-            "label": "Chicago",
-            "group": "Citation",
-            "value": "true",
-            "type": "checkbox",
-            "dependencies": [
-                {
-                    "field": "citation",
-                    "value": "true"
-                }
-            ]
-        },
-        {
-            "name": "citeBluebook",
-            "label": "Bluebook",
-            "group": "Citation",
-            "value": "true",
-            "type": "checkbox",
-            "dependencies": [
-                {
-                    "field": "citation",
-                    "value": "true"
-                }
-            ]
-        },
-        {
-            "name": "showCitationCopyMessage",
-            "label": "Show Citation Copy Alert",
-            "group": "Citation",
-            "value": "true",
-            "type": "checkbox",
-            "dependencies": [
-                {
-                    "field": "citation",
-                    "value": "true"
-                }
-            ]
-        },
-        {
-            "name": "citationCopyMessage",
-            "label": "Show Citation Copy Message",
-            "group": "Citation",
-            "value": "Citation copied to clipboard:",
-            "type": "text",
-            "dependencies": [
-                {
-                    "field": "citation",
-                    "value": "true"
-                },
-                {
-                    "field": "showCitationCopyMessage",
                     "value": "true"
                 }
             ]
@@ -2148,6 +2098,262 @@
         },
 
         {
+            "name": "separator",
+            "type": "separator",
+            "label": "PDF Download Button",
+            "group": "PDF Settings",
+            "note": "The PDF Download Button feature lets you add a button on your Posts page which will download your posts in PDF.",
+            "size": "small"
+        },   
+        {
+            "name": "pdfDownloadButton",
+            "group": "PDF Settings",
+            "label": "Enable PDF DOwnload Option",
+            "value": true,
+            "type": "checkbox"
+        },
+        {
+            "name": "titleFontSize",
+            "label": "Title Font Size",
+            "note": "Set the font size for the post title in the PDF.",
+            "group": "PDF Settings",
+            "value": 18,
+            "type": "number",
+            "dependencies": [
+                {
+                    "field": "pdfDownloadButton",
+                    "value": "true"
+                }
+            ]
+        },
+        {
+            "name": "contentFontSize",
+            "label": "Content Font Size",
+            "note": "Set the font size for the post content in the PDF.",
+            "group": "PDF Settings",
+            "value": 12,
+            "type": "number",
+            "dependencies": [
+                {
+                    "field": "pdfDownloadButton",
+                    "value": "true"
+                }
+            ]
+        },
+        {
+            "name": "lineSpacing",
+            "label": "Line Spacing",
+            "note": "Set the line space for the post content in the PDF.",
+            "group": "PDF Settings",
+            "value": 0.5,
+            "type": "number",
+            "dependencies": [
+                {
+                    "field": "pdfDownloadButton",
+                    "value": "true"
+                }
+            ]
+        },
+        {
+            "name": "includeImages",
+            "label": "Include Images",
+            "note": "Choose whether to include images in the PDF.",
+            "group": "PDF Settings",
+            "value": true,
+            "type": "checkbox",
+            "dependencies": [
+                {
+                    "field": "pdfDownloadButton",
+                    "value": "true"
+                }
+            ]
+        },
+        {
+			"name": "headingFont",
+			"label": "Headings Font",
+			"note": "",
+			"group": "PDF Settings",
+			"value": "helvetica",
+			"type": "select",
+			"options": [
+				{
+					"label": "Helvetica",
+					"value": "helvetica"
+				},
+				{
+					"label": "Courier",
+					"value": "courier"
+				},
+				{
+					"label": "Times",
+					"value": "times"
+				}
+			],
+            "dependencies": [
+                {
+                    "field": "pdfDownloadButton",
+                    "value": "true"
+                }
+            ]
+		},
+        {
+			"name": "headingFontWeight",
+			"label": "Headings Font Weight",
+			"note": "",
+			"group": "PDF Settings",
+			"value": "bold",
+			"type": "select",
+			"options": [
+				{
+					"label": "Bold",
+					"value": "bold"
+				},
+				{
+					"label": "Normal",
+					"value": "normal"
+				},
+				{
+					"label": "Italic",
+					"value": "italic"
+				}
+			],
+            "dependencies": [
+                {
+                    "field": "pdfDownloadButton",
+                    "value": "true"
+                }
+            ]
+		},
+        {
+			"name": "contentFont",
+			"label": "Paragraph Font",
+			"note": "",
+			"group": "PDF Settings",
+			"value": "times",
+			"type": "select",
+			"options": [
+				{
+					"label": "Helvetica",
+					"value": "helvetica"
+				},
+				{
+					"label": "Courier",
+					"value": "courier"
+				},
+				{
+					"label": "Times",
+					"value": "times"
+				}
+			],
+            "dependencies": [
+                {
+                    "field": "pdfDownloadButton",
+                    "value": "true"
+                }
+            ]
+		},
+        {
+            "name": "h1FontSize",
+            "label": "H1 Font Size",
+            "note": "Set the font size for the Heading 1 in the PDF.",
+            "group": "PDF Settings",
+            "value": 20,
+            "type": "number",
+            "dependencies": [
+                {
+                    "field": "pdfDownloadButton",
+                    "value": "true"
+                }
+            ]
+        },
+        {
+            "name": "h2FontSize",
+            "label": "H2 Font Size",
+            "note": "Set the font size for the Heading 2 in the PDF.",
+            "group": "PDF Settings",
+            "value": 18,
+            "type": "number",
+            "dependencies": [
+                {
+                    "field": "pdfDownloadButton",
+                    "value": "true"
+                }
+            ]
+        },
+        {
+            "name": "h3FontSize",
+            "label": "H3 Font Size",
+            "note": "Set the font size for the Heading 3 in the PDF.",
+            "group": "PDF Settings",
+            "value": 16,
+            "type": "number",
+            "dependencies": [
+                {
+                    "field": "pdfDownloadButton",
+                    "value": "true"
+                }
+            ]
+        },
+        {
+            "name": "h4FontSize",
+            "label": "H4 Font Size",
+            "note": "Set the font size for the Heading 4 in the PDF.",
+            "group": "PDF Settings",
+            "value": 16,
+            "type": "number",
+            "dependencies": [
+                {
+                    "field": "pdfDownloadButton",
+                    "value": "true"
+                }
+            ]
+        },
+        {
+            "name": "h5FontSize",
+            "label": "H5 Font Size",
+            "note": "Set the font size for the Heading 5 in the PDF.",
+            "group": "PDF Settings",
+            "value": 16,
+            "type": "number",
+            "dependencies": [
+                {
+                    "field": "pdfDownloadButton",
+                    "value": "true"
+                }
+            ]
+        },
+        {
+            "name": "h6FontSize",
+            "label": "H6 Font Size",
+            "note": "Set the font size for the Heading 6 in the PDF.",
+            "group": "PDF Settings",
+            "value": 16,
+            "type": "number",
+            "dependencies": [
+                {
+                    "field": "pdfDownloadButton",
+                    "value": "true"
+                }
+            ]
+        },
+        {
+            "name": "copyCitation",
+            "group": "Citation",
+            "label": "Enable Citation",
+            "note": "This option shows a copy citation button on the post. When clicked the citation is copied to the clipboard as following format, Author. 'Title of the Article.' Website Name, Date of Publication, URL.",
+            "value": true,
+            "type": "checkbox"
+        },
+        {
+            "name": "copyProtectionCredits",
+            "group": "Citation",
+            "label": "Enable Copy Protection Credits",
+            "note": "This option automatically copies the citation aling with access date and website name, with the copied content to the user's clipboard.",
+            "value": true,
+            "type": "checkbox"
+        },
+
+        {
             "name": "formatDate",
             "label": "Date format",
             "group": "Additional",
@@ -2279,23 +2485,6 @@
             "label": "Display tag name",
             "note": "Enable/Disable tag name above post title",
             "value": 1,
-            "type": "select",
-            "options": [
-                {
-                    "label": "Enabled",
-                    "value": 1
-                },
-                {
-                    "label": "Disabled",
-                    "value": 0
-                }
-            ]
-        },
-        {
-            "name": "displayCitation",
-            "label": "Display citation",
-            "value": 1,
-            "note": "Requires 'Enable Citation' to be turned on in Theme Settings.",
             "type": "select",
             "options": [
                 {
@@ -2441,6 +2630,126 @@
             "label": "Display comments",
             "value": 0,
             "type": "select",
+            "options": [
+                {
+                    "label": "Enabled",
+                    "value": 1
+                },
+                {
+                    "label": "Disabled",
+                    "value": 0
+                }
+            ]
+        }
+    ],
+    "pageConfig": [
+        {
+            "name": "displayAuthor",
+            "label": "Display author name",
+            "value": 0,
+            "type": "select",
+            "pageTemplates": "!empty",
+            "options": [
+                {
+                    "label": "Enabled",
+                    "value": 1
+                },
+                {
+                    "label": "Disabled",
+                    "value": 0
+                }
+            ]
+        },
+        {
+            "name": "displayDate",
+            "label": "Display date",
+            "value": 0,
+            "type": "select",
+            "pageTemplates": "!empty",
+            "options": [
+                {
+                    "label": "Enabled",
+                    "value": 1
+                },
+                {
+                    "label": "Disabled",
+                    "value": 0
+                }
+            ]
+        },
+        {
+            "name": "displayLastUpdatedDate",
+            "label": "Display last updated date",
+            "value": 0,
+            "type": "select",
+            "pageTemplates": "!empty",
+            "options": [
+                {
+                    "label": "Enabled",
+                    "value": 1
+                },
+                {
+                    "label": "Disabled",
+                    "value": 0
+                }
+            ]
+        },
+        {
+            "name": "displayShareButtons",
+            "label": "Display share buttons",
+            "value": 0,
+            "type": "select",
+            "pageTemplates": "!empty",
+            "options": [
+                {
+                    "label": "Enabled",
+                    "value": 1
+                },
+                {
+                    "label": "Disabled",
+                    "value": 0
+                }
+            ]
+        },
+        {
+            "name": "displayTags",
+            "label": "Display tags",
+            "value": 0,
+            "type": "select",
+            "pageTemplates": "!empty",
+            "options": [
+                {
+                    "label": "Enabled",
+                    "value": 1
+                },
+                {
+                    "label": "Disabled",
+                    "value": 0
+                }
+            ]
+        },
+        {
+            "name": "displayChildPages",
+            "label": "Display child pages",
+            "value": 0,
+            "type": "select",
+            "options": [
+                {
+                    "label": "Enabled",
+                    "value": 1
+                },
+                {
+                    "label": "Disabled",
+                    "value": 0
+                }
+            ]
+        },
+        {
+            "name": "displayComments",
+            "label": "Display comments",
+            "value": 0,
+            "type": "select",
+            "pageTemplates": "!empty",
             "options": [
                 {
                     "label": "Enabled",

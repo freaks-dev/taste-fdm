@@ -1,29 +1,29 @@
 {{> head}}
 {{> navbar}}
-<main>
+<main class="post">
    <div class="wrapper">
       {{#if @customHTML.beforePost}}
-         <div class="banner banner--before-post">
+         <div class="banner banner--before-content">
             {{{@customHTML.beforePost }}}
          </div>
       {{/if}}
       {{#post}}
-         <article class="post">
-            <header class="post__header">
+         <article class="content">
+            <header class="content__header">
                {{#if @config.post.displayCategoryName}}
                   {{#if mainTag}}
-                     <a href="{{ mainTag.url }}" class="post__maintag">
+                     <a href="{{ mainTag.url }}" class="content__maintag">
                         {{mainTag.name }}
                      </a>
                   {{/if}}
                {{/if}}
-               <h1 class="post__title">
+               <h1 class="content__title">
                   {{title}}
                </h1>
                {{#checkIfAny @config.post.displayAuthor @config.post.displayDate @config.post.displayComments}}
-                  <div class="post__meta">
+                  <div class="content__meta">
                      {{#if @config.post.displayAuthor}}
-                        <div class="post__author">{{ translate 'post.publishedBy' }}
+                        <div class="content__author">{{ translate 'post.publishedBy' }}
                            {{#author}}
                               <a href="{{url}}" class="invert" rel="author" title="{{name}}">{{name}}</a>
                            {{/author}}
@@ -40,7 +40,7 @@
                      {{/if}}
 
                      {{#if @config.post.displayComments}}
-                        <div class="post__comments">
+                        <div class="content__comments">
                            <a href="{{url}}#comments" rel="nofollow" aria-label="{{ translate 'common.comments' }}">
                               <svg aria-hidden="true">
                                  <title>{{ translate 'common.comments' }}</title>
@@ -55,7 +55,7 @@
 
             {{#featuredImage}}
                {{#if url}}
-                  <figure class="post__featured-image">
+                  <figure class="content__featured-image">
                      <img
                         src="{{url}}"
                         {{#if @config.site.responsiveImages}}
@@ -75,11 +75,14 @@
                   </figure>
                {{/if}}
             {{/featuredImage}}
-            {{#if @config.post.displayCitation}}
-            {{> cite}}
-            {{/if}}
-            <div class="post__inner">
-               <div class="post__entry">
+            <div class="content__inner">
+               {{#if @config.custom.pdfDownloadButton}}
+               <button class="pdf-download-button">Download PDF</button>
+               {{/if}}
+               {{#if @config.custom.copyCitation}}
+               <button class="citation-copy-button">Copy Citation</button>
+               {{/if}}
+               <div class="content__entry">
                   {{{text}}}
                </div>
                {{#checkIfAny @config.post.displayLastUpdatedDate @config.post.displayTags @config.post.displayShareButtons @config.post.displayAuthorBio @config.post.displayPostNavigation}}
@@ -87,7 +90,7 @@
 
                      {{#if @config.post.displayLastUpdatedDate}}
                         {{#if modifiedAt}}
-                           <p class="post__last-updated">
+                           <p class="content__last-updated">
                               {{ translate 'post.lastUpdatedDate' }}
                               {{#checkIf @config.custom.formatDate '!=' 'custom'}}
                                  {{date modifiedAt @config.custom.formatDate}}
@@ -99,10 +102,10 @@
                      {{/if}}
 
                      {{#checkIfAny @config.post.displayTags @config.post.displayShareButtons}}
-                        <div class="post__tags-share">
+                        <div class="content__tags-share">
                            {{#if @config.post.displayTags}}
                               {{#if tags}}
-                                 <ul class="post__tag">
+                                 <ul class="content__tag">
                                     {{#each tags}}
                                        <li>
                                           <a href="{{url}}">{{name}}</a>
@@ -114,11 +117,11 @@
 
                            {{#if @config.post.displayShareButtons}}
                               {{#checkIfAll @plugins.socialSharing @plugins.socialSharing.state}}
-                                 <aside class="post__share">
+                                 <aside class="content__share">
                                     {{{@customSocialSharing}}}
                                  </aside>
                               {{else}}
-                                 <aside class="post__share">
+                                 <aside class="content__share">
                                     {{> share-buttons}}
                                  </aside>
                               {{/checkIfAll}}          
@@ -127,7 +130,7 @@
                      {{/checkIfAny}}
                      {{#if @config.post.displayAuthorBio}}
                         {{#author}}
-                           <div class="post__bio bio">
+                           <div class="content__bio bio">
                               {{#if avatar}}                              
                                  <img 
                                     src="{{avatarImage.url}}" 
@@ -153,18 +156,18 @@
 
                      {{#if @config.post.displayPostNavigation}}
                         {{#checkIfAny ../previousPost ../nextPost}}
-                           <nav class="post__nav">
+                           <nav class="content__nav">
                               {{#../previousPost}}
-                                 <div class="post__nav__prev">
-                                    <a class="post__nav__link" href="{{url}}" rel="prev">
+                                 <div class="content__nav__prev">
+                                    <a class="content__nav__link" href="{{url}}" rel="prev">
                                        {{ translate 'post.previousPost' }}
                                        <h3 class="h6">{{title}}</h3>
                                     </a>
                                  </div>
                               {{/../previousPost}}
                               {{#../nextPost}}
-                                 <div class="post__nav__next">
-                                    <a class="post__nav__link" href="{{url}}" rel="prev">
+                                 <div class="content__nav__next">
+                                    <a class="content__nav__link" href="{{url}}" rel="prev">
                                        {{ translate 'post.nextPost' }}
                                        <h3 class="h6">{{title}}</h3>
                                     </a>
@@ -181,13 +184,13 @@
       {{/post}}
 
       {{#if @config.post.displayComments}}
-         <div class="comments-area post__inner" id="comments">
+         <div class="comments-area content__inner" id="comments">
             {{{@commentsCustomCode}}}
          </div>
       {{/if}}
 
       {{#if @customHTML.afterPost}}
-         <div class="banner banner--after-post">
+         <div class="banner banner--after-content">
             {{{@customHTML.afterPost}}}
          </div>
       {{/if}}
@@ -196,7 +199,7 @@
 
    {{#if @config.post.displayRelatedPosts}}
       {{#if relatedPosts}}
-         <div class="post__related">
+         <div class="content__related">
             <div class="wrapper">
                <h2 class="h5">
                   {{ translate 'post.relatedPosts' }}
@@ -272,3 +275,223 @@
    {{/if}}
 </main>
 {{> footer}}
+{{#if @config.custom.pdfDownloadButton}}
+<script src="{{@website.assetsUrl}}/js/jspdf.umd.min.js"></script>
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        // Ensure jsPDF is available
+        if (window.jspdf) {
+            const { jsPDF } = window.jspdf;
+
+            // Attach event listener to the button
+            const button = document.querySelector('.pdf-download-button');
+            if (button) {
+                button.addEventListener('click', function () {
+                    const doc = new jsPDF({ format: 'a4' });
+                    const pageWidth = doc.internal.pageSize.getWidth();
+                    const pageHeight = doc.internal.pageSize.getHeight();
+                    const margin = 20;
+                    let y = margin;
+
+                    // Retrieve the title and content
+                    const postTitle = document.querySelector('h1')?.innerText || 'Document';
+                    let content = document.querySelector('.post__entry') || document.querySelector('.content__entry');
+
+                    // If no content is found, exit
+                    if (!content) return;
+
+                    // Add the title to the PDF
+                    doc.setFont('{{@config.custom.headingFont}}', 'bold');
+                    doc.setFontSize({{@config.custom.titleFontSize}});
+                    const wrappedTitle = doc.splitTextToSize(postTitle, pageWidth - 2 * margin);
+                    doc.text(wrappedTitle, pageWidth / 2, y, { align: 'center' });
+                    y += {{@config.custom.titleFontSize}} + 10;
+
+                    // Process content elements
+                    doc.setFont('{{@config.custom.contentFont}}', 'normal');
+                    doc.setFontSize({{@config.custom.contentFontSize}});
+                    const elements = content.children;
+
+                    function processElement(element) {
+                        const tagName = element.tagName.toLowerCase();
+                        switch (tagName) {
+                            case 'h1':
+                                doc.setFontSize({{@config.custom.h1FontSize}});
+                                doc.setFont('{{@config.custom.headingFont}}', '{{@config.custom.headingFontWeight}}');
+                                y += 5;
+                                break;
+                            case 'h2':
+                                doc.setFontSize({{@config.custom.h2FontSize}});
+                                doc.setFont('{{@config.custom.headingFont}}', '{{@config.custom.headingFontWeight}}');
+                                y += 5;
+                                break;
+                            case 'h3':
+                                doc.setFontSize({{@config.custom.h3FontSize}});
+                                doc.setFont('{{@config.custom.headingFont}}', '{{@config.custom.headingFontWeight}}');
+                                y += 5;
+                                break;
+                            case 'h4':
+                                 doc.setFontSize({{@config.custom.h4FontSize}});
+                                 doc.setFont('{{@config.custom.headingFont}}', '{{@config.custom.headingFontWeight}}');
+                                 y += 5;
+                                 break;
+                                case 'h5':
+                                    doc.setFontSize({{@config.custom.h5FontSize}});
+                                    doc.setFont('{{@config.custom.headingFont}}', '{{@config.custom.headingFontWeight}}');
+                                    y += 5;
+                                    break;
+                                case 'h6':
+                                    doc.setFontSize({{@config.custom.h6FontSize}});
+                                    doc.setFont('{{@config.custom.headingFont}}', '{{@config.custom.headingFontWeight}}');
+                                    y += 5;
+                                    break;
+                                case 'strong':
+                                    doc.setFont('{{@config.custom.headingFont}}', 'bold');
+                                    break;
+                                case 'em':
+                                    doc.setFont('{{@config.custom.headingFont}}', 'italic');
+                                    break;
+                                case 'u':
+                                    doc.setFont('{{@config.custom.headingFont}}', 'normal');
+                                    break;
+                                case 'p':
+                            default:
+                                doc.setFontSize({{@config.custom.contentFontSize}});
+                                doc.setFont('{{@config.custom.contentFont}}', 'normal');
+                        }
+                        // Handle inline formatting within paragraphs (strong, em, etc.)
+                            const childNodes = element.childNodes;
+                            let textContent = '';
+                            let inlineText = '';
+    
+                            childNodes.forEach(node => {
+                                if (node.nodeType === Node.TEXT_NODE) {
+                                    inlineText = node.nodeValue;
+                                    textContent += inlineText;
+                                } else if (node.nodeType === Node.ELEMENT_NODE) {
+                                    const tagName = node.tagName.toLowerCase();
+                                    // Check for inline tags (strong, em, u)
+                                    if (tagName === 'strong') {
+                                        doc.setFont('{{@config.custom.contentFont}}', 'bold');
+                                        inlineText = node.innerText;
+                                        textContent += inlineText;
+                                    } else if (tagName === 'em') {
+                                        doc.setFont('{{@config.custom.contentFont}}', 'italic');
+                                        inlineText = node.innerText;
+                                        textContent += inlineText;
+                                    } else if (tagName === 'u') {
+                                        doc.setFont('{{@config.custom.contentFont}}', 'normal');
+                                        inlineText = node.innerText;
+                                        textContent += inlineText;
+                                    } else {
+                                        inlineText = node.innerText;
+                                        textContent += inlineText;
+                                    }
+                                }
+                            });
+
+                        // Handle the text content of the element
+                        const text = element.innerText.trim();
+                        if (text) {
+                            const lines = doc.splitTextToSize(text, pageWidth - 2 * margin);
+                            lines.forEach(line => {
+                                if (y + {{@config.custom.contentFontSize}} > pageHeight - margin) {
+                                    doc.addPage();
+                                    y = margin;
+                                }
+                                doc.text(line, margin, y);
+                                y += {{@config.custom.contentFontSize}} * {{@config.custom.lineSpacing}};
+                            });
+                        }
+                        // Reset font style after processing the element
+                           doc.setFont('helvetica', 'normal');
+                    }
+
+                    // Loop through all content elements and process them
+                    Array.from(elements).forEach(el => processElement(el));
+
+                    // Optionally include images
+                    if ({{@config.custom.includeImages}}) {
+                        const images = content.querySelectorAll('img');
+                        images.forEach(image => {
+                            const imgSrc = image.src;
+                            const altText = image.alt || 'View image';
+
+                            if (y > pageHeight - margin) {
+                                doc.addPage();
+                                y = margin;
+                            }
+
+                            doc.setTextColor(0, 0, 255);
+                            doc.textWithLink(altText, margin, y, { url: imgSrc });
+                            doc.setTextColor(0, 0, 0);
+                            y += 10;
+                        });
+                    }
+
+                    // Save the generated PDF
+                    const fileName = postTitle.replace(/[^a-z0-9]/gi, '_').toLowerCase();
+                    doc.save(fileName + '.pdf');
+                });
+            }
+        }
+    });
+</script>
+{{/if}}
+{{#if @config.custom.copyCitation}}
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const copyButton = document.querySelector('.citation-copy-button');
+
+    copyButton?.addEventListener('click', function() {
+        const author = "{{#post}}{{#author}}{{name}}{{/author}}{{/post}}"; // Replace with dynamic author fetching if available
+        const title = "{{#post}}{{title}}{{/post}}";
+        const website = "{{@website.name}}";
+        const pubDate = "{{date createdAt 'MMMM D, YYYY'}}"; // Replace with dynamic publication date if available
+        const url = "{{@website.pageUrl}}";
+
+        // Construct the citation in the standard format
+        const citation = `${author}. "${title}." ${website}, ${pubDate}, ${url}.`;
+
+        // Copy citation to the clipboard
+        navigator.clipboard.writeText(citation).then(() => {
+            alert("Citation copied to clipboard!");
+        }).catch(err => {
+            console.error("Error copying citation:", err);
+        });
+    });
+});
+</script>
+{{/if}}
+{{#if @config.custom.copyProtectionCredits}}
+<script>
+document.addEventListener('copy', function(event) {
+    // Function to get the current date in "Month Day, Year" format
+    function getCurrentDate() {
+        const options = { day: 'numeric', month: 'long', year: 'numeric' };
+        return new Date().toLocaleDateString('en-US', options);
+    }
+
+    const author = "{{#post}}{{#author}}{{name}}{{/author}}{{/post}}";
+    const title = "{{#post}}{{title}}{{/post}}";
+    const website = "{{@website.name}}";
+    const pubDate = "{{date createdAt 'MMMM D, YYYY'}}";
+    const url = "{{@website.pageUrl}}";
+    const accessedDate = getCurrentDate();
+    const sitename = "{{@website.rootUrl}}";
+    const currentYear = new Date().getFullYear();
+
+    // Construct the citation
+    const citation = `\n\n© ${currentYear} ${sitename}.\nCitation: ${author}. "${title}." ${website}, ${pubDate}, ${url}. Accessed on ${accessedDate}. This content is copied from ${sitename}`;
+
+    // Check if there's any selected text
+    const selection = window.getSelection().toString();
+    if (selection) {
+        // Append the citation to the copied content
+        const copiedText = `${selection}${citation}`;
+        event.clipboardData.setData('text/plain', copiedText);
+        event.preventDefault(); // Prevent the default copy behavior
+    }
+});
+</script>
+{{/if}}

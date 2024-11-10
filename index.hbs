@@ -8,6 +8,16 @@
          {{#if @config.custom.hero}}
             {{#checkIf @config.custom.heroSource '==' "static" }}
                <div class="hero">
+                  <div class="hero__date">
+                     {{ translate 'common.updated' }}
+                     <time datetime="{{date @website.lastUpdate 'YYYY-MM-DDTHH:mm'}}">
+                        {{#checkIf @config.custom.formatDate '!=' 'custom'}}
+                           {{date @website.lastUpdate @config.custom.formatDate}}
+                        {{else}}
+                           {{date @website.lastUpdate @config.custom.formatDateCustom}}
+                        {{/checkIf}}
+                     </time>
+                  </div>
                   {{{@config.custom.textHero}}}
                   {{#if @config.custom.buttonHeroLinkName}}
                      <a href="{{@config.custom.buttonHeroLinkUrl}}" class="btn hero__btn">{{@config.custom.buttonHeroLinkName}}</a>

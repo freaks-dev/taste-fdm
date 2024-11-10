@@ -54,11 +54,13 @@
    {{/if}}
 
    {{> menu-footer menus.footerMenu}}
-
    {{#if @config.custom.copyrightText}}
       <div class="footer__copyright">
-        Copyright &copy; {{@utils.currentYear}} {{{@config.custom.copyrightText}}} <br>
-        {{#if @config.custom.websiteUpdatedDate}}
+         {{{@config.custom.copyrightText}}}
+      </div>
+   {{/if}}
+   {{#if @config.custom.websiteUpdatedDate}}
+      <div class="footer__copyright">
         {{ translate 'common.updated' }}
          <time datetime="{{date @website.lastUpdate 'YYYY-MM-DDTHH:mm'}}">
          {{#checkIf @config.custom.formatDate '!=' 'custom'}}
@@ -67,8 +69,7 @@
          {{date @website.lastUpdate @config.custom.formatDateCustom}}
          {{/checkIf}}
         </time>
-        {{/if}}
-      </div>
+        </div>
    {{/if}}
 </footer>
 <script>
@@ -97,13 +98,11 @@
       }
    </script>
 {{/if}}
-{{#is "post"}}
-   {{#post}}
-      {{#if hasGallery}}
-          {{> photoswipe}}
-      {{/if}}
-  {{/post}}
-{{/is}}
+
+{{#checkIfAny post.hasGallery page.hasGallery}}
+   {{> photoswipe}}
+{{/checkIfAny}}
+
 {{#checkIf @config.custom.frontSource '==' "post"}}
    {{#checkIf @config.custom.frontGallery '==' true}}
       {{#is "index"}}
