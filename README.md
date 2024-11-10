@@ -38,9 +38,6 @@ Current version is 3.3.1. Major changes and features addition since version 1.
 
 This modified Publii Taste theme is released under the GNU General Public License version 3.0 (GPL-3.0). You are free to use, modify, and distribute this theme in accordance with the terms of the GPL-3.0 license.
 
-### License Update
-This project was previously licensed under GPL-3.0 and has been updated to the Boost Software License 1.0 as of 10 November 2024.
-
 ## Credits
 
 The modified Taste theme is based on the original [Publii Taste theme](https://marketplace.getpublii.com/themes/taste/) developed by Publii. 
