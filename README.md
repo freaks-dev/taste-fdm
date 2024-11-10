@@ -32,7 +32,7 @@ This repository contains a modified version of the Publii Taste theme, which has
 
 ## Version
 
-Current version is 3.3.1. Major changes and features addition since version 1.
+Current version is 3.5.1. Major changes and features addition since version 3.3.1.
 
 ## License
 
@@ -56,9 +56,13 @@ Include relevant screenshots or provide instructions on how to view the modified
 
 ![Screenshot 2023-11-13 at 13-23-05 New Post](https://github.com/freaks-dev/taste-fdm/assets/76874370/dd54e8b4-cf9f-4960-b546-a249fdf46aae)
 
-![image](https://github.com/freaks-dev/taste-fdm/assets/76874370/a726a901-2f7a-43c9-9492-c667aa9d2f78)
+![image](https://github.com/user-attachments/assets/82242e94-f602-4a79-bc4c-4386ea103e27)
+
 
 ![image](https://github.com/freaks-dev/taste-fdm/assets/76874370/11b6f28c-b858-4ee4-9e1b-65dff9c1e2b6)
+
+![image](https://github.com/user-attachments/assets/a94af2f8-2a2d-4c22-9107-a3cd5cf7d124)
+
 
 ![Screenshot from 2023-07-03 19-28-03](https://github.com/freaks-dev/taste-fdm/assets/76874370/ba4f240f-98bf-4b22-bbef-d8e550b228f8)
 
