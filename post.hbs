@@ -77,10 +77,10 @@
             {{/featuredImage}}
             <div class="content__inner">
                {{#if @config.custom.pdfDownloadButton}}
-               <button class="pdf-download-button">Download PDF</button>
+               <button style="margin: 0px 20px 20px 30px; align-items: center;" class="pdf-download-button"><img src="./assets/svg/filetype-pdf.svg" alt="Icon"><span style="margin-left: 8px;">Download PDF</span></button>
                {{/if}}
                {{#if @config.custom.copyCitation}}
-               <button class="citation-copy-button">Copy Citation</button>
+               <button class="citation-copy-button"><img src="./assets/svg/quote.svg" alt="Icon"><span style="margin-left: 8px;">Copy Citation</span></button>
                {{/if}}
                <div class="content__entry">
                   {{{text}}}
